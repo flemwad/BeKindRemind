@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="15dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        app:layout_box="all">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/be_kind"
+            android:textColor="@color/black" />
+
+        <ImageButton
+            android:id="@+id/confirm_kind"
+            android:background="@null"
+            android:layout_gravity="bottom|center"
+            android:layout_height="75dp"
+            android:layout_width="77dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:src="@drawable/checkbutton"
+            android:onClick="confirmKind"/>
+
+    </FrameLayout>
+</android.support.wearable.view.BoxInsetLayout>

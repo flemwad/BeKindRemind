@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Be Kind Remind</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="be_kind">I Was Kind To Myself</string>
+    <string name="kind_confirm">Feels Good!</string>
+
+</resources>
