@@ -162,7 +162,7 @@ public class BeKindMainMobileActivity extends ActionBarActivity implements Messa
     private void initTextViews () {
         txtBreakNumber.setText(String.valueOf(breakGoal));
         txtBreakTimer.setText(String.valueOf(breakTimer));
-        txtIntervalNumber.setText("2"); //String.valueOf(remindInterval)
+        txtIntervalNumber.setText(String.valueOf(remindInterval));
         etxtCompMsg.setText(compMsg);
 
         txtCurrentProgress.setOnLongClickListener(new View.OnLongClickListener() {
