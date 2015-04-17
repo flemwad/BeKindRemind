@@ -2,34 +2,49 @@
 <android.support.wearable.view.BoxInsetLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:padding="15dp">
+    android:layout_width="match_parent">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp"
-        app:layout_box="all">
+        android:orientation="vertical"
+        android:backgroundTint="@color/white"
+        android:background="@color/grey"
+        app:layout_box="top">
 
         <TextView
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="@string/be_kind"
-            android:textColor="@color/black" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textColor="@color/grey"
+            android:text="@string/text_remind_msg"/>
 
-        <ImageButton
-            android:id="@+id/confirm_kind"
-            android:background="@null"
-            android:layout_gravity="bottom|center"
-            android:layout_height="75dp"
-            android:layout_width="77dp"
-            style="?android:attr/borderlessButtonStyle"
-            android:src="@drawable/checkbutton"
-            android:onClick="confirmKind"/>
+        <TextView
+            android:id="@+id/text_break_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textSize="13dp"
+            android:textStyle="italic"
+            android:textColor="@color/grey" />
 
-    </FrameLayout>
+        <android.support.wearable.view.DelayedConfirmationView
+            android:id="@+id/delayed_remind_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_full_cancel"
+            app:circle_color="@color/blue"
+            app:circle_radius="@dimen/circle_radius"
+            app:circle_radius_pressed="@dimen/circle_radius_pressed"
+            app:circle_padding="@dimen/circle_padding"
+            app:circle_border_width="@dimen/circle_border_normal_width"
+            app:circle_border_color="@color/dark_blue"/>
+
+    </LinearLayout>
 </android.support.wearable.view.BoxInsetLayout>

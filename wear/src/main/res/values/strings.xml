@@ -3,7 +3,11 @@
 
     <string name="app_name">Be Kind Remind</string>
     <string name="hello_round">Hello Round World!</string>
-    <string name="be_kind">I Was Kind To Myself</string>
-    <string name="kind_confirm">Feels Good!</string>
+    <string name="openphone">Open on phone</string>
+
+    <string name="text_remind_msg">Remember H.E.A.L</string>
+    <string name="notification_title">DelayedConfirmation</string>
+    <string name="notification_timer_selected">Timer Selected</string>
+    <string name="notification_timer_finished">Timer Finished</string>
 
 </resources>

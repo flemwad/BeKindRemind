@@ -5,4 +5,72 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="TitlePosMomentFont" parent="android:TextAppearance.Holo.Large">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="CountdownFont" parent="android:TextAppearance.Holo.Large">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="LabelFont" parent="android:TextAppearance.Holo.Large">
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="IncrementFont" parent="android:TextAppearance.Holo.Large">
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CompMsgFont" parent="LabelFont">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:lines">2</item>
+    </style>
+
+    <style name="BtnGo" parent="android:Widget.Button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="BtnClose" parent="android:Widget.Button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="BtnGoalAdj" parent="android:Widget.Button">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="BtnDoneComp" parent="android:Widget.Button">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+
 </resources>
