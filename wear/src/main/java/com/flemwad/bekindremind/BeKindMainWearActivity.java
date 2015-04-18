@@ -50,8 +50,12 @@ public class BeKindMainWearActivity extends Activity implements DelayedConfirmat
         setContentView(R.layout.activity_be_kind_main_wear);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
 
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
+//                        WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+
         PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
-        mWakeLock = powerManager.newWakeLock((PowerManager.PARTIAL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP), "MyWakelockTag");
+        mWakeLock = powerManager.newWakeLock((PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.FULL_WAKE_LOCK |PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.ON_AFTER_RELEASE ), "MyWakelockTag");
+        mWakeLock.acquire();
 
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
@@ -62,9 +66,6 @@ public class BeKindMainWearActivity extends Activity implements DelayedConfirmat
                 showRemindConfirmation();
             }
         });
-
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
@@ -115,6 +116,10 @@ public class BeKindMainWearActivity extends Activity implements DelayedConfirmat
             mGoogleApiClient.disconnect();
         }
 
+        if(mWakeLock.isHeld()) {
+            mWakeLock.release();
+        }
+
         super.onDestroy();
     }
     //End Activity Overrides
@@ -122,9 +127,6 @@ public class BeKindMainWearActivity extends Activity implements DelayedConfirmat
     //Delay Confirm Timer
     private void showRemindConfirmation () {
         if(breakTimer != 0) {
-            //Wake screen for length of timer
-            mWakeLock.acquire(breakTimer);
-
             mDelayedViewRemind.setTotalTimeMs(breakTimer * 1000);
             mDelayedViewRemind.start();
 

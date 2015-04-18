@@ -4,7 +4,7 @@
     <string name="app_name">Be Kind Remind</string>
     <string name="finish_date">Set Finish Time</string>
     <string name="text_break_goal">Break Goal</string>
-    <string name="text_remind_interval">Remind Interval (hrs)</string><!--</string><string name="text_remind_interval">Remind Interval (hrs)</string>-->
+    <string name="text_remind_interval">Conf Interval (sec)</string><!--</string><string name="text_remind_interval">Remind Interval (hrs)</string>-->
     <string name="text_break_timer">Break Timer (sec)</string>
     <string name="text_comp_msg">Completion Message</string>
     <string name="toast_kind_remind">Kind Remind finished! Good job!</string>

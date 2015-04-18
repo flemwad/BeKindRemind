@@ -48,7 +48,7 @@ public class BeKindWearNotificationService extends WearableListenerService {
         if (null != intent) {
             String action = intent.getAction();
             if (ACTION_DISMISS.equals(action)) {
-                dismissNotification();
+                //dismissNotification();
             }
         }
 
@@ -90,14 +90,13 @@ public class BeKindWearNotificationService extends WearableListenerService {
     
     private void sendRemindConfirmationIntent(int breakTimer, String compMsg) throws PendingIntent.CanceledException {
         Intent intent = new Intent(this, BeKindMainWearActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setAction("com.flemwad.activities.BeKindMainWearActivity");
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
         intent.putExtra("breakTimer", breakTimer);
         intent.putExtra("compMsg", compMsg);
 
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(250);
         v.vibrate(250);
 
         startActivity(intent);
@@ -170,12 +169,15 @@ public class BeKindWearNotificationService extends WearableListenerService {
         public void onConnected(Bundle bundle) {
             final Uri dataGoItemUri = new Uri.Builder().scheme(WEAR_URI_SCHEME).path(G0_NOTIFICATION_PATH).build();
             final Uri dataRemindItemUri = new Uri.Builder().scheme(WEAR_URI_SCHEME).path(REMIND_NOTIFICATION_PATH).build();
+            final Uri dataConfirmUri = new Uri.Builder().scheme(WEAR_URI_SCHEME).path(REMIND_FINISH_CONFIRM).build();
+
 
 //            if (Log.isLoggable(TAG, Log.DEBUG)) {
 //                Log.d(TAG, "Deleting Uri: " + dataItemUri.toString());
 //            }
             Wearable.DataApi.deleteDataItems(mGoogleApiClient, dataGoItemUri).setResultCallback(this);
             Wearable.DataApi.deleteDataItems(mGoogleApiClient, dataRemindItemUri).setResultCallback(this);
+            Wearable.DataApi.deleteDataItems(mGoogleApiClient, dataConfirmUri).setResultCallback(this);
         }
 
         @Override
