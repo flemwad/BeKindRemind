@@ -50,8 +50,8 @@ public class BeKindMainWearActivity extends Activity implements DelayedConfirmat
         setContentView(R.layout.activity_be_kind_main_wear);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
 
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
-//                        WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
+                        WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
 
         PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
         mWakeLock = powerManager.newWakeLock((PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.FULL_WAKE_LOCK |PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.ON_AFTER_RELEASE ), "MyWakelockTag");

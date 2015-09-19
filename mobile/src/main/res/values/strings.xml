@@ -11,5 +11,7 @@
     <string name="toast_kind_remind_goal_reached">You reached your break goal! Nice! Resetting...</string>
     <string name="btn_close">CLOSE</string>
     <string name="action_settings">Settings</string>
+    <string name="reset_values">Reset All Values</string>
+    <string name="openphone">Open on phone</string>
 
 </resources>
